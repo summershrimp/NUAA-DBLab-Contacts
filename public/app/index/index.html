@@ -1,0 +1,27 @@
+<style>
+    body{
+        padding-top: 60px;
+    }
+</style>
+<div ng-controller="IndexController">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Nick Name</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="c in contacts">
+            <td>{{ c.first_name }}</td>
+            <td>{{ c.last_name }}</td>
+            <td>{{ c.nick_name }}</td>
+            <td><button class="btn btn-warning btn-xs" ng-click="edit(c.id)">详情</button>
+                <button class="btn btn-danger btn-xs" ng-click="del(c.id)">删除</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

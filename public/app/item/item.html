@@ -1,0 +1,7 @@
+<div class="form-group directive-item">
+    <input ng-model="data.id" hidden="hidden">
+    <select id="type" class="form-control" ng-model="data.type_id">
+        <option ng-repeat="t in TYPES" value="{{ t.id }}">{{ t.type_name }}</option>
+    </select>
+    <input id="value" ng-model="data.value" class="form-control" placeholder="Value" required>
+</div>

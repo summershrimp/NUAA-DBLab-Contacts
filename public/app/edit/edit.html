@@ -1,0 +1,52 @@
+<style>
+    body{
+        padding-top: 60px;
+    }
+    .directive-item {
+        width: 500px;
+        margin: 10px auto !important;
+    }
+    .btn-container {
+        width: 500px;
+        margin: 0 auto !important;
+    }
+    .form-group .btn {
+        float: right;
+        margin: 10px;
+    }
+
+</style>
+
+<div ng-controller="EditController">
+    <form class="form-horizontal">
+        <input ng-model="contact.id" hidden="hidden"/>
+        <div class="form-group">
+            <label for="First" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="First" ng-model="contact.first_name" placeholder="First Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Last" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Last" ng-model="contact.last_name" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Nick" class="col-sm-2 control-label">Nick Name</label>
+            <div class="col-sm-10">
+                <input ttype="text" class="form-control" id="Nick" ng-model="contact.nick_name" placeholder="Nick Name">
+            </div>
+        </div>
+
+        <div ng-repeat="i in contact.items">
+            <item data="i"></item>
+        </div>
+
+        <div class="form-group btn-container">
+            <button ng-click="cancel()" class="btn btn-danger">Cancel</button>
+            <button ng-click="save()" class="btn btn-warning">Save</button>
+            <button ng-click="addItem()" class="btn btn-default">Add Item</button>
+        </div>
+    </form>
+</div>

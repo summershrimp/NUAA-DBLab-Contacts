@@ -1,0 +1,39 @@
+<style>
+    body{
+        padding-top: 60px;
+    }
+    .search{
+        margin: 10px auto;
+        width: 400px;
+    }
+</style>
+<div ng-controller="SearchController">
+    <div class="input-group search">
+        <input type="text" ng-model="keyword" ng-change="doSearch()" class="form-control" placeholder="Keyword">
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Nick Name</td>
+            <td>Type Name</td>
+            <td>Value</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="c in contacts">
+            <td>{{ c.first_name }}</td>
+            <td>{{ c.last_name }}</td>
+            <td>{{ c.nick_name }}</td>
+            <td>{{ c.type_name }}</td>
+            <td>{{ c.value }}</td>
+            <td><button class="btn btn-warning btn-xs" ng-click="edit(c.id)">详情</button>
+                <button class="btn btn-danger btn-xs" ng-click="del(c.id)">删除</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
